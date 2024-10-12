@@ -1,4 +1,8 @@
-import { GetServerSideProps, GetServerSidePropsContext, GetServerSidePropsResult } from "next";
+import {
+  GetServerSideProps,
+  GetServerSidePropsContext,
+  GetServerSidePropsResult,
+} from 'next';
 
 type PostsProps = {
   posts: Record<string, any>[];
@@ -7,7 +11,7 @@ type PostsProps = {
 const Posts = ({ posts }: PostsProps) => {
   return (
     <>
-      {posts.map((post) => (
+      {posts.map(post => (
         <ul key={post?.id}>
           <li>{post.id}</li>
           <li>{post.title}</li>
@@ -17,15 +21,17 @@ const Posts = ({ posts }: PostsProps) => {
   );
 };
 
-export async function getServerSideProps({ query }: GetServerSidePropsContext): Promise<GetServerSidePropsResult<PostsProps>> {
-  console.log("Start Server Side");
+export async function getServerSideProps({
+  query,
+}: GetServerSidePropsContext): Promise<GetServerSidePropsResult<PostsProps>> {
+  console.log('Start Server Side');
 
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
 
   if (!res.ok) {
     return {
       redirect: {
-        destination: "/",
+        destination: '/',
         permanent: false,
       },
     };
@@ -44,6 +50,6 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext): 
       posts,
     },
   };
-};
+}
 
 export default Posts;

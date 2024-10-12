@@ -1,14 +1,12 @@
-import React from "react";
-import MainLayout from "./MainLayout";
+import React from 'react';
+import MainLayout from './MainLayout';
 
 type LayoutProps = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return <MainLayout>
-    {children}
-  </MainLayout>
-}
+  return <MainLayout>{children}</MainLayout>;
+};
 
-export default Layout; 
+export default Layout;
