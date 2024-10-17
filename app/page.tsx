@@ -4,7 +4,7 @@ import { RecoilRoot } from 'recoil';
 export default function Page() {
   return (
     <>
-        <Home />
+      <Home />
     </>
   );
 }

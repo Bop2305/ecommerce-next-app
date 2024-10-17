@@ -10,7 +10,7 @@ type ContentProps = {
 const Content: React.FC<ContentProps> = ({ data }) => {
   const [isEmpty, setIsEmpty] = useState(true);
   const [categoryState, setCategory] = useRecoilState(category);
-  const [postState, setPost] = useRecoilState(post)
+  const [postState, setPost] = useRecoilState(post);
 
   useEffect(() => {
     if (data) setIsEmpty(false);
@@ -25,12 +25,12 @@ const Content: React.FC<ContentProps> = ({ data }) => {
           <li>{data.title}</li>
         </ul>
       )}
-      <button onClick={() => setCategory("tech")}>Technology</button>
+      <button onClick={() => setCategory('tech')}>Technology</button>
       <ul>
-          <li>{postState.id}</li>
-          <li>{postState.title}</li>
-          <li>{postState.content}</li>
-        </ul>
+        <li>{postState.id}</li>
+        <li>{postState.title}</li>
+        <li>{postState.content}</li>
+      </ul>
     </>
   );
 };
