@@ -34,3 +34,22 @@
 @mixin margin($space) {
   margin: map-get($spacing, $space);
 }
+
+@mixin box($height, $wight) {
+  height: $height;
+  width: $wight;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin visible($isHide) {
+  @if $isHide==true {
+    display: none;
+  } @else {
+    display: block;
+  }
+}

@@ -1,5 +1,27 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .title {
   color: $green;
+}
+
+.box {
+  @include box(200px, 200px)
+}
+
+.bgRed {
+  background-color: red;
+}
+
+.boxCenter {
+  @include flex-center();
+}
+
+div {
+  .header {
+    font-size: medium;
+    .navBar {
+      height: "20px";
+    }
+  }
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import '../styles/global.scss';
 import Layout from '@/modules/layouts/Layout';
+import { RecoilRoot } from 'recoil';
+import RecoilContextProvider from '@/libs/RecoilContextProvider';
 
 export const metadata: Metadata = {
   title: 'Ecommerce Application',
@@ -15,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Layout>{children}</Layout>
+        <RecoilContextProvider>
+          <Layout>{children}</Layout>
+        </RecoilContextProvider>
       </body>
     </html>
   );
